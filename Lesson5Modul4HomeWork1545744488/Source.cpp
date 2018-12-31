@@ -131,8 +131,41 @@ void Task5()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask5\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	int store = 15, n=0, i=0;
+
+	do 
+	{
+		i++;
+		printf("\n%3 %d - машина, укажите кол-во ящиков с яблоками на погрузку => ", i);
+		scanf_s("%d", &n);
+
+		if (n <= store)
+		{
+			store = store - n;
+		}
+		else
+		{
+			SetConsoleTextAttribute(hConsole, 14);
+			printf("\n%3 Вы ввели больше ящиков чем у Вас имеется на складе!\n Остаток на складе %d ящиков, повторите ввод заново...\n", store);
+			SetConsoleTextAttribute(hConsole, 7);
+			i--;
+		}
+		if (store == 0)
+		{
+			SetConsoleTextAttribute(hConsole, 11);
+			printf("\n%3 Вы отгрузили со склада все ящики с яблоками!");
+			SetConsoleTextAttribute(hConsole, 7);
+			break;
+		}
+
+	} while (store >= 0);
+		
+
+
+
+
 }
 
 
@@ -148,7 +181,7 @@ int main()
 
 	do
 	{
-		printf("Enter number of Task (1) to (9) => ");
+		printf("Enter number of Task (1) to (5) => ");
 		scanf_s("%d", &number);
 
 		switch (number)
