@@ -147,7 +147,7 @@ void Task5()
 		}
 		else
 		{
-			SetConsoleTextAttribute(hConsole, 14);
+			SetConsoleTextAttribute(hConsole, 9);
 			printf("\n%3 Вы ввели больше ящиков чем у Вас имеется на складе!\n Остаток на складе %d ящиков, повторите ввод заново...\n", store);
 			SetConsoleTextAttribute(hConsole, 7);
 			i--;
@@ -175,6 +175,9 @@ int main()
 	setlocale(LC_ALL, "");
 	srand(time(NULL));
 
+	SetConsoleTextAttribute(hConsole, 14);
+	printf("\n\n\n%3 Евгений, доброго времени суток!\n\nПоздравляю Вас с Новым 2019 Годом!!!\n\n\n");
+	SetConsoleTextAttribute(hConsole, 7);
 
 
 	int number, flag;
